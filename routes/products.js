@@ -4,7 +4,6 @@ import { Product } from '../db-utils/models.js';
 
 const ProdRouter = express.Router();
 
-// 1. Get all available products (sold: false)
 ProdRouter.get('/available', async (req, res) => {
     try {
         // Fetch all products where `sold` is false
@@ -15,7 +14,6 @@ ProdRouter.get('/available', async (req, res) => {
     }
 });
 
-// 2. Get a specific product by SKU (irrespective of availability)
 ProdRouter.get('/available/:sku', async (req, res) => {
     try {
         // Find product by SKU (unique identifier)
