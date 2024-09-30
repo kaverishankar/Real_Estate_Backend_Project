@@ -1,6 +1,5 @@
 import express from 'express';
-import { transporter} from '../db-utils/mail-utils.js'; // Import your Nodemailer configuration
-
+import { transporter} from '../db-utils/mail-utils.js'; 
 const MailRouter = express.Router();
 
 MailRouter.post('/send-interest-email', async (req, res) => {
