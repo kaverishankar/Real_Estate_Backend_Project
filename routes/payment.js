@@ -15,7 +15,7 @@ paymentRouter.post("/get-payment-session", async (req, res) => {
         name: pd.name,
         images: pd.images,
       },
-      unit_amount: pd.price * 100, // 109899 -> 1098.99
+      unit_amount: pd.price * 100, 
     },
     quantity: pd.qty || 1,
   }));
