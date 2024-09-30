@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
   const { name, phone, email, address, userType, password } = req.body;
 
   try {
-    // Check if the user already exists
+  
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ message: 'Email already exists' });
@@ -19,7 +19,6 @@ router.post('/', async (req, res) => {
 
     const userId = Date.now().toString();
 
-    // Create a new user
     const newUser = new User({
       name,
       userId,
@@ -30,7 +29,6 @@ router.post('/', async (req, res) => {
       password: hashedPassword
     });
 
-    // Save the user in the database
     await newUser.save();
 
     res.status(201).json({ message: 'User registered successfully' });
