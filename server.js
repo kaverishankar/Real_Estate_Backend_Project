@@ -12,7 +12,11 @@ import MailRouter from './routes/mail.js';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://capstonerealestateproject.netlify.app',              // Allow requests from your frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // If you are sending cookies or authorization headers
+}));
 
 const logger =(req,res,next) =>
 {
