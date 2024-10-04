@@ -25,7 +25,7 @@ paymentRouter.post("/get-payment-session", async (req, res) => {
     line_items: lineItems,
     mode: "payment",
     success_url: `${process.env.FE_URL}/orderSuccess`,
-    cancel_url: `${process.env.FE_URL}/cart?payment=cancelled`,
+    cancel_url: `${process.env.FE_URL}/cart`,
   });
 
   res.json({ id: session.id });
